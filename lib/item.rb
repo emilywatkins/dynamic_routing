@@ -38,4 +38,10 @@ class Item
     @@list.sort_by! { |item| item.rank }
   end
 
+  def exists()
+    # if @@list.include?(@name)
+    #   false
+    # else
+    #   true
+  end
 end
