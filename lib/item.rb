@@ -39,12 +39,11 @@ class Item
   end
 
   def self.exists(name)
-    item_name = name
     @@list.each do |item|
-      if item.name == item_name
-        true
+      if item.name == name
+        return true
       else
-        false
+        return false
       end
     end
 

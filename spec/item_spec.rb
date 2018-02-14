@@ -64,11 +64,10 @@ describe("Item") do
 
   describe(".exists") do
     it("check to make sure that the same item can't be added twice") do
-      item = Item.new("tacos", 2)
+      item = Item.new("tacos", 1)
       item.save()
-      item2 = Item.new("tacos", 1)
-      item2.save()
-      expect(Item.exists("tacos")).to(eq(true))
+      item2 = Item.new("tacos", 2)
+      expect(Item.exists(item2.name)).to(eq(true))
     end
   end
 end
