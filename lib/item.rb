@@ -38,10 +38,15 @@ class Item
     @@list.sort_by! { |item| item.rank }
   end
 
-  def exists()
-    # if @@list.include?(@name)
-    #   false
-    # else
-    #   true
+  def self.exists(name)
+    item_name = name
+    @@list.each do |item|
+      if item.name == item_name
+        true
+      else
+        false
+      end
+    end
+
   end
 end

@@ -21,16 +21,6 @@ describe("Item") do
     end
   end
 
-  describe(".includes") do
-    it("check to make sure that the same item can't be added twice") do
-      item = Item.new("tacos", 2)
-      item.save()
-      item2 = Item.new("tacos", 1)
-      item2.save()
-      expect(Item.all()).to(eq(false))
-    end
-  end
-
   describe(".clear") do
     it("clears all items from the list") do
       item = Item.new("tacos", 1)
@@ -69,6 +59,16 @@ describe("Item") do
       item2 = Item.new("pizza", 1)
       item2.save()
       expect(Item.sort()).to(eq([item2, item]))
+    end
+  end
+
+  describe(".exists") do
+    it("check to make sure that the same item can't be added twice") do
+      item = Item.new("tacos", 2)
+      item.save()
+      item2 = Item.new("tacos", 1)
+      item2.save()
+      expect(Item.exists("tacos")).to(eq(true))
     end
   end
 end
