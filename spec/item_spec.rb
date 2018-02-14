@@ -54,11 +54,11 @@ describe("Item") do
 
   describe(".sort") do
     it("sorts list of favorite things by ranking from 0-10") do
-      item = Item.new("tacos", 1)
+      item = Item.new("tacos", 2)
       item.save()
-      item2 = Item.new("pizza", 2)
+      item2 = Item.new("pizza", 1)
       item2.save()
-      expect(Item.sort()).to(eq([item.name, item2.name]))
+      expect(Item.sort()).to(eq([item2, item]))
     end
   end
 end

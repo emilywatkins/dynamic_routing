@@ -35,7 +35,7 @@ class Item
   end
 
   def self.sort()
-
+    @@list.sort_by! { |item| item.rank }
   end
 
 end
